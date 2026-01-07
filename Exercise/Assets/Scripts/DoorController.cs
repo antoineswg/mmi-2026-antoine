@@ -2,7 +2,8 @@
 
 public class DoorController : TriggerController
 {
-    private static readonly string IS_OPEN_PARAMETER = "Knock Knock";
+    private static readonly string KNOCK_PARAMETER = "Knock Knock";
+    private static readonly string IS_OPEN_PARAMETER = "IsOpen";
 
     [SerializeField] private Animator m_Animator;
     [SerializeField] private ItemController m_ItemController;
@@ -26,6 +27,7 @@ public class DoorController : TriggerController
             }
         }
 
+        m_Animator.SetBool(KNOCK_PARAMETER, true);
         m_Animator.SetBool(IS_OPEN_PARAMETER, true);
 
         return true;
